@@ -1,7 +1,7 @@
 {
-  "name": "api",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Api para el centro de Rehabilitacion",
+  "description": "Backend para el sistema de gestion de un centro de rehabilitacion",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,11 +10,11 @@
     "prepare": "husky"
   },
   "keywords": [
-    "Api",
-    "Centro",
+    "Backend",
+    "Clínica",
     "Rehabilitacion"
   ],
-  "author": "GRUPO 1",
+  "author": "Grupo 4",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -34,7 +34,6 @@
     "@eslint/js": "^9.31.0",
     "@eslint/json": "^0.13.0",
     "eslint": "^9.31.0",
-    "eslint-plugin-react": "^7.37.5",
     "globals": "^16.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
@@ -42,6 +41,6 @@
     "typescript-eslint": "^8.37.0"
   },
   "lint-staged": {
-  "**/*.js": "eslint --fix"
+    "**/*.js": "eslint --fix"
   }
 }
