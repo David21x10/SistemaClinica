@@ -1,0 +1,49 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Obtiene el mensaje del commit del archivo que Git pasa como argumento
+commit_message=$(cat "$1")
+
+# Patrones para validar el mensaje del commit
+# Formato: tipo(scope): descripción
+# Tipos disponibles: feat, fix, docs, style, refactor, perf, test, chore, ci,
+# build, revert, hotfix, wip, release, deps, security, migration
+commit_pattern="^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert|hotfix|wip|release|deps|security|migration)(\(.+\))?: .{1,100}"
+
+if ! echo "$commit_message" | grep -qE "$commit_pattern"; then
+	echo "❌ Mensaje de commit inválido!"
+	echo ""
+	echo "El mensaje debe seguir el formato: tipo(scope): descripción"
+	echo ""
+	echo "Tipos válidos:"
+	echo "  feat:      Nueva funcionalidad"
+	echo "  fix:       Corrección de bugs"
+	echo "  docs:      Cambios en documentación"
+	echo "  style:     Cambios de formato (espacios, comas, etc.)"
+	echo "  refactor:  Refactorización de código"
+	echo "  perf:      Mejoras de rendimiento"
+	echo "  test:      Agregar o modificar tests"
+	echo "  chore:     Cambios en herramientas de build"
+	echo "  ci:        Cambios en CI/CD"
+	echo "  build:     Cambios en sistema de build"
+	echo "  revert:    Revertir un commit anterior"
+	echo "  hotfix:    Corrección urgente en producción"
+	echo "  wip:       Trabajo en progreso (temporal)"
+	echo "  release:   Publicación / versión"
+	echo "  deps:      Actualización de dependencias"
+	echo "  security:  Cambios relacionados con seguridad"
+	echo "  migration: Cambios en migraciones de base de datos"
+	echo ""
+	echo "Ejemplos válidos:"
+	echo "  feat: agregar login de usuario"
+	echo "  fix(auth): corregir validación de email"
+	echo "  docs: actualizar README"
+	echo "  hotfix: corregir crash en producción"
+	echo "  release(v1.2.0): preparar release"
+	echo "  deps: actualizar express a la última versión"
+	echo ""
+	echo "Tu mensaje: $commit_message"
+	exit 1
+fi
+
+echo "✅ Mensaje de commit válido"
