@@ -6,12 +6,12 @@ const App = express();
 
 const pacienteRoutes = require("./routes/pacienteRoute.js");
 const encargadoRoutes = require("./routes/encargadoRoute.js");
-const bodegaRoutes = require("./routes/bodegaRoute.js");
-const productoRoutes = require("./routes/productoRoute.js");
-const terapeutaRoutes = require("./routes/terapeutaRoute.js");
-const diagnosticoRoutes = require("./routes/diagnosticoRoute.js");
-const citasRoutes = require("./routes/citaRoute.js");
-const usuarioRoutes = require("./routes/usuarioRoute.js");
+//const bodegaRoutes = require("./routes/bodegaRoute.js");
+//const productoRoutes = require("./routes/productoRoute.js");
+//const terapeutaRoutes = require("./routes/terapeutaRoute.js");
+//const diagnosticoRoutes = require("./routes/diagnosticoRoute.js");
+//const citasRoutes = require("./routes/citaRoute.js");
+//const usuarioRoutes = require("./routes/usuarioRoute.js");
 
 App.use(
     cors({
@@ -25,11 +25,11 @@ App.use(express.urlencoded({ extended: false }));
 
 App.use("/Api/pacientes", pacienteRoutes);
 App.use("/Api/encargados", encargadoRoutes);	
-App.use("/Api/bodega", bodegaRoutes);	
-App.use("/Api/productos", productoRoutes);
-App.use("/Api/terapeutas", terapeutaRoutes);
-App.use("/Api/diagnostico", diagnosticoRoutes)
-App.use("/Api/citas", citasRoutes);
-App.use("/Api/usuarios", usuarioRoutes);
+//App.use("/Api/bodega", bodegaRoutes);	
+//App.use("/Api/productos", productoRoutes);
+//App.use("/Api/terapeutas", terapeutaRoutes);
+//App.use("/Api/diagnostico", diagnosticoRoutes)
+//App.use("/Api/citas", citasRoutes);
+//App.use("/Api/usuarios", usuarioRoutes);
 
 module.exports = App;
