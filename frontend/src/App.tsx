@@ -1,35 +1,69 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import './App.css';
+import NavBar from './components/share/NavBar';
+import Home from './components/Home';
+import PacientesTable from "./components/Pacientes";
+import TerapeutasTable from './components/Terapeuta';
+import CitasTable from "./components/Citas";
+import UsuariosTable from "./components/Usuario";
+import Login from './components/Login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './toast-custom.css';
+import ScrollToTop from './components/ScrollToTop';
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  const [count, setCount] = useState(0)
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ScrollToTop />
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        toastClassName="custom-toast"
+      />
+      {location.pathname !== '/' && <NavBar />}
+      <main className="main-content" style={{ overflow: 'auto', height: '100%' }}>
+      <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/pacientes" element={<PacientesTable />} />
+          <Route path="/terapeutas" element={<TerapeutasTable />} />
+          <Route path="/citas" element={<CitasTable />} />
+         
+
+       
+          <Route path="/usuarios" element={
+            <ProtectedRoute allowedRoles={["1"]}>
+              <UsuariosTable />
+            </ProtectedRoute>
+          } />
+     
+
+      
+        </Routes>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
