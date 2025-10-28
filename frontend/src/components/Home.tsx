@@ -3,29 +3,27 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { FaUserMd, FaUsers, FaCalendarAlt } from "react-icons/fa";
-// import { FaUserFriends, FaBox, FaWarehouse, FaBuyNLarge, FaShare } from "react-icons/fa"; // Comentado - funcionalidades para otro desarrollador
+import { FaUserMd, FaUsers, FaCalendarAlt, FaUserFriends, FaBox, FaWarehouse, FaBuyNLarge, FaShare } from "react-icons/fa";
 import { FaUserGear } from "react-icons/fa6";
 
 const cardsData = [
   { path: "/pacientes", img: "/images/paciente.webp", title: "Control de Pacientes", text: "Gestiona pacientes, citas y diagnósticos.", icon: <FaUsers size={24} /> },
-  // { path: "/encargados", img: "/images/encargado.webp", title: "Control de Encargados", text: "Maneja información de encargados de los pacientes.", icon: <FaUserFriends size={24} /> },
+ // { path: "/encargados", img: "/images/encargado.webp", title: "Control de Encargados", text: "Maneja información de encargados de los pacientes.", icon: <FaUserFriends size={24} /> },
   { path: "/citas", img: "/images/citas.webp", title: "Control de Citas", text: "Organiza y gestiona citas de los pacientes.", icon: <FaCalendarAlt size={24} /> },
-  // { path: "/diagnosticos", img: "/images/diagnostico.webp", title: "Control de Diagnósticos", text: "Administra los diagnósticos del sistema.", icon: <FaUserGear size={24} /> },
+ // { path: "/diagnosticos", img: "/images/diagnostico.webp", title: "Control de Diagnósticos", text: "Administra los diagnósticos del sistema.", icon: <FaUserGear size={24} /> },
   { path: "/terapeutas", img: "/images/terapeuta.webp", title: "Control de Terapeutas", text: "Administra terapeutas, horarios y especialidades.", icon: <FaUserMd size={24} /> },
-  // { path: "/productos", img: "/images/producto.webp", title: "Control de Productos", text: "Supervisa el stock y gestión de productos.", icon: <FaBox size={24} /> },
-  // { path: "/compras", img: "/images/compras.webp", title: "Control de Compras", text: "Administra las compras del sistema.", icon: <FaBuyNLarge size={24} /> },
-  // { path: "/bodega", img: "/images/bodega.webp", title: "Control de Bodega", text: "Administra el inventario de productos médicos.", icon: <FaWarehouse size={24} /> },
-  // { path: "/prestamos", img: "/images/prestamo.webp", title: "Control de Préstamos", text: "Administra los préstamos del sistema.", icon: <FaShare size={24} /> },
+ // { path: "/productos", img: "/images/producto.webp", title: "Control de Productos", text: "Supervisa el stock y gestión de productos.", icon: <FaBox size={24} /> },
+ // { path: "/compras", img: "/images/compras.webp", title: "Control de Compras", text: "Administra las compras del sistema.", icon: <FaBuyNLarge size={24} /> },
+ // { path: "/bodega", img: "/images/bodega.webp", title: "Control de Bodega", text: "Administra el inventario de productos médicos.", icon: <FaWarehouse size={24} /> },
+ // { path: "/prestamos", img: "/images/prestamo.webp", title: "Control de Préstamos", text: "Administra los préstamos del sistema.", icon: <FaShare size={24} /> },
   { path: "/usuarios", img: "/images/usuario.webp", title: "Control de Usuarios", text: "Administra los usuarios del sistema.", icon: <FaUserGear size={24} /> },
 ];
 
 function CardGrids() {
   const navigate = useNavigate();
-   const userRole = localStorage.getItem("idRol")?.toString();
+  const userRole = localStorage.getItem("idRol")?.toString();
     console.log(" userRole desde el Home", userRole);
-  // const unallowedPathsForRole1 = ["/productos", "/compras", "/bodega", "/prestamos", "/usuarios"];
-  const unallowedPathsForRole1 = ["/usuarios"]; // Solo usuarios requiere rol de administrador
+  const unallowedPathsForRole1 = ["/productos", "/compras", "/bodega", "/prestamos", "/usuarios"];
   //ADMINISTRADOR = 1
   const filteredCards =
     userRole === "1"
@@ -36,7 +34,7 @@ function CardGrids() {
       overflow: 'hidden',
       margin: 0,
       padding: 0,
-      background: "linear-gradient(135deg, rgba(46, 139, 87, 0.95) 0%, rgba(32, 97, 61, 0.9) 50%, rgba(46, 139, 87, 0.85) 100%)",
+      background: "linear-gradient(135deg, rgba(74, 144, 226, 0.95) 0%, rgba(30, 87, 153, 0.9) 50%, rgba(74, 144, 226, 0.85) 100%)",
     }}>
       <Container className="py-5">
         <div className="text-center mb-5">
@@ -60,7 +58,7 @@ function CardGrids() {
         <Row xs={1} md={2} lg={3} className="g-4">
           {filteredCards.map((card, index) => (
             <Col key={index}>
-              <div className={`card-animate delay-${index}`}>
+              <div className={card-animate delay-${index}}>
                 <Card
                   className="h-100 border-0 rounded-4 overflow-hidden card-hover"
                   onClick={() => navigate(card.path)}
@@ -83,12 +81,12 @@ function CardGrids() {
                     />
                     <div className="card-img-overlay" />
                     <div className="position-absolute top-0 end-0 m-3 bg-white rounded-circle p-2 shadow-sm">
-                      <div style={{ color: "#2E8B57" }}>{card.icon}</div>
+                      <div style={{ color: "#4a90e2" }}>{card.icon}</div>
                     </div>
                   </div>
                   <Card.Body className="p-4">
                     <Card.Title className="h4 mb-3" style={{ 
-                      color: "#2E8B57",
+                      color: "#4a90e2",
                       fontWeight: "600",
                       letterSpacing: "-0.01em"
                     }}>
