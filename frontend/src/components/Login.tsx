@@ -34,7 +34,7 @@ const Login: React.FC = () => {
         setLoading(false);
         return;
       }
-         
+      
       localStorage.setItem("idRol", data.idRol.toString());
         
       toast.success("Inicio de sesión exitoso");
@@ -54,7 +54,7 @@ const Login: React.FC = () => {
       style={{
         minHeight: "100vh",
         width: "100%",
-        background: `linear-gradient(135deg, rgba(40, 117, 73, 0.7) 0%, rgba(26, 87, 53, 0.7) 100%), url('/images/fotoprincipallogin.webp')`,
+        background: "linear-gradient(135deg, rgba(74, 144, 226, 0.7) 0%, rgba(30, 87, 153, 0.7) 100%)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -80,8 +80,8 @@ const Login: React.FC = () => {
           >
             <div className="text-center mb-4">
               <img
-                src="/logo.png"
-                alt="Logo"
+                src="/logo-new.svg"
+                alt="Logo Clínica de Rehabilitación"
                 style={{
                   width: "120px",
                   height: "auto",
@@ -93,11 +93,11 @@ const Login: React.FC = () => {
                 style={{
                   fontSize: "1.8rem",
                   fontWeight: "600",
-                  color: "#2E8B57",
+                  color: "#1e5799",
                   marginBottom: "0.5rem",
                 }}
               >
-                Bienvenido
+                Bienvenido a la Clínica
               </h2>
               <p
                 style={{
@@ -105,7 +105,7 @@ const Login: React.FC = () => {
                   fontSize: "0.95rem",
                 }}
               >
-                Ingresa tus credenciales para continuar
+                Sistema de Gestión de Rehabilitación
               </p>
             </div>
 
@@ -118,7 +118,7 @@ const Login: React.FC = () => {
                       left: "15px",
                       top: "50%",
                       transform: "translateY(-50%)",
-                      color: "#2E8B57",
+                      color: "#4a90e2",
                     }}
                   >
                     <FaUser />
@@ -148,7 +148,7 @@ const Login: React.FC = () => {
                       left: "15px",
                       top: "50%",
                       transform: "translateY(-50%)",
-                      color: "#2E8B57",
+                      color: "#4a90e2",
                     }}
                   >
                     <FaLock />
@@ -175,7 +175,7 @@ const Login: React.FC = () => {
                       right: "10px",
                       top: "50%",
                       transform: "translateY(-50%)",
-                      color: "#2E8B57",
+                      color: "#4a90e2",
                       padding: "0.25rem",
                     }}
                   >
@@ -191,7 +191,7 @@ const Login: React.FC = () => {
                 style={{
                   padding: "0.75rem",
                   borderRadius: "10px",
-                  backgroundColor: "#2E8B57",
+                  backgroundColor: "#4a90e2",
                   border: "none",
                   fontSize: "1rem",
                   fontWeight: "500",
@@ -202,7 +202,7 @@ const Login: React.FC = () => {
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-2px)";
                   e.currentTarget.style.boxShadow =
-                    "0 4px 12px rgba(46, 139, 87, 0.25)";
+                    "0 4px 12px rgba(74, 144, 226, 0.25)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
