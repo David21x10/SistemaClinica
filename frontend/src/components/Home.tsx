@@ -8,9 +8,9 @@ import { FaUserGear } from "react-icons/fa6";
 
 const cardsData = [
   { path: "/pacientes", img: "/images/paciente.webp", title: "Control de Pacientes", text: "Gestiona pacientes, citas y diagnósticos.", icon: <FaUsers size={24} /> },
- // { path: "/encargados", img: "/images/encargado.webp", title: "Control de Encargados", text: "Maneja información de encargados de los pacientes.", icon: <FaUserFriends size={24} /> },
+  { path: "/encargados", img: "/images/encargado.webp", title: "Control de Encargados", text: "Maneja información de encargados de los pacientes.", icon: <FaUserFriends size={24} /> },
   { path: "/citas", img: "/images/citas.webp", title: "Control de Citas", text: "Organiza y gestiona citas de los pacientes.", icon: <FaCalendarAlt size={24} /> },
- // { path: "/diagnosticos", img: "/images/diagnostico.webp", title: "Control de Diagnósticos", text: "Administra los diagnósticos del sistema.", icon: <FaUserGear size={24} /> },
+  { path: "/diagnosticos", img: "/images/diagnostico.webp", title: "Control de Diagnósticos", text: "Administra los diagnósticos del sistema.", icon: <FaUserGear size={24} /> },
   { path: "/terapeutas", img: "/images/terapeuta.webp", title: "Control de Terapeutas", text: "Administra terapeutas, horarios y especialidades.", icon: <FaUserMd size={24} /> },
  // { path: "/productos", img: "/images/producto.webp", title: "Control de Productos", text: "Supervisa el stock y gestión de productos.", icon: <FaBox size={24} /> },
  // { path: "/compras", img: "/images/compras.webp", title: "Control de Compras", text: "Administra las compras del sistema.", icon: <FaBuyNLarge size={24} /> },
@@ -58,7 +58,7 @@ function CardGrids() {
         <Row xs={1} md={2} lg={3} className="g-4">
           {filteredCards.map((card, index) => (
             <Col key={index}>
-              <div className={card-animate delay-${index}}>
+              <div className={`card-animate delay-${index}`}>
                 <Card
                   className="h-100 border-0 rounded-4 overflow-hidden card-hover"
                   onClick={() => navigate(card.path)}

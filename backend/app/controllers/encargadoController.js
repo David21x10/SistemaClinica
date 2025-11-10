@@ -5,7 +5,7 @@ const  encargado= db.encargado;
 
 async function getencargados(req, res){
     encargado.findAll({
-        where: { estado: true }
+       // where: { estado: true }
     })
     .then(result => {
         res.status(200).send({ result });

@@ -5,7 +5,7 @@ const terapeuta = db.terapeuta;
 
 const getTerapeutas = async (req, res) => {
     terapeuta.findAll({
-        where: { estado: true }
+       // where: { estado: true }
     })
         .then(result => {
             res.status(200).send({ result });

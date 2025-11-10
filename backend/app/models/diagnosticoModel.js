@@ -25,17 +25,16 @@ module.exports = (sequelize) => {
                 key: 'id_terapeuta'
             }
         },
+        fecha: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
+        },
         descripcion: {
             type: DataTypes.TEXT,
         },
         tratamiento: {
             type: DataTypes.TEXT,
             allowNull: false
-        },
-        estado: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: true
         }
     };
     const options = {

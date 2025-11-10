@@ -13,6 +13,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import './toast-custom.css';
 import ScrollToTop from './components/ScrollToTop';
 import ProtectedRoute from "./components/ProtectedRoute";
+import EncargadosTable from "./components/Encargados";
+import DiagnosticosTable from "./components/Diagnosticos";
+
 
 function App() {
   return (
@@ -49,6 +52,8 @@ function AppContent() {
           <Route path="/pacientes" element={<PacientesTable />} />
           <Route path="/terapeutas" element={<TerapeutasTable />} />
           <Route path="/citas" element={<CitasTable />} />
+          <Route path="/encargados" element={<EncargadosTable />} />
+          <Route path="/diagnosticos" element={<DiagnosticosTable />} />
          
 
        

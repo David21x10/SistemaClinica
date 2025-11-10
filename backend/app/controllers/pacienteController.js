@@ -6,7 +6,7 @@ const encargado = db.encargado;
 
 async function getpacientes(req, res){
 paciente.findAll({
-    where: { estado: true },
+    
     include:[{
         model: encargado,
         attributes: ['nombre','apellido']
