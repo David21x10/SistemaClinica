@@ -7,7 +7,7 @@ const Terapeuta = db.terapeuta;
 
 async function getDiagnostico(req, res) {
     diagnostico.findAll({
-        where: { estado: true },
+       // where: { estado: true },
         include: [
             {
                 model: Paciente,
@@ -29,7 +29,8 @@ async function getDiagnostico(req, res) {
 
 const insertDiagnostico = async (req, res) => {
     try {
-        const diagnosticoData = { ...req.body, estado: true };
+        const fechaActual = new Date().toISOString().split('T')[0];
+        const diagnosticoData = { ...req.body, estado: true, fecha: req.body.fecha || fechaActual };
         const newdiagnostico = await diagnostico.create(diagnosticoData); 
         res.status(201).json({ message: 'Diagnóstico guardado exitosamente', data: newdiagnostico });
     } catch (error) {
@@ -41,7 +42,8 @@ const insertDiagnostico = async (req, res) => {
 const updateDiagnostico = async (req, res) => {
     try {
         const { diagnostico_id } = req.query;
-        const diagnosticoData = { ...req.body, estado: true };
+        const fechaActual = new Date().toISOString().split('T')[0];
+        const diagnosticoData = { ...req.body, estado: true, fecha: req.body.fecha || fechaActual };
 
         const diagnosticoToUpdate = await diagnostico.findByPk(diagnostico_id);
         if (diagnosticoToUpdate) {
