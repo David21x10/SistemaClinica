@@ -118,7 +118,7 @@ function TerapeutasTable() {
       }}>
         <Card.Header className="bg-gradient py-3"
           style={{ 
-            backgroundColor: "#2E8B57",
+            backgroundColor: "#4a90e9",
             borderRadius: "20px 20px 0 0",
             border: "none"
           }}>
