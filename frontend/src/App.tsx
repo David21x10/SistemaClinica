@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import './toast-custom.css';
 
-//import GlobalToast from './components/share/GlobalToast';
+import GlobalToast from './components/share/GlobalToast';
 import NavBar from './components/share/NavBar';
 import Home from './components/Home';
 import PacientesTable from "./components/Pacientes";
@@ -30,7 +30,7 @@ function AppContent() {
   return (
     <>
       <ScrollToTop />
-      {/* <GlobalToast /> */}
+      <GlobalToast /> 
       
       {location.pathname !== '/' && <NavBar />}
 
