@@ -1,20 +1,19 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import './toast-custom.css';
+
+//import GlobalToast from './components/share/GlobalToast';
 import NavBar from './components/share/NavBar';
 import Home from './components/Home';
 import PacientesTable from "./components/Pacientes";
 import TerapeutasTable from './components/Terapeuta';
 import CitasTable from "./components/Citas";
-import UsuariosTable from "./components/Usuario";
 import Login from './components/Login';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './toast-custom.css';
-import ScrollToTop from './components/ScrollToTop';
-import ProtectedRoute from "./components/ProtectedRoute";
 import EncargadosTable from "./components/Encargados";
 import DiagnosticosTable from "./components/Diagnosticos";
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {
@@ -31,40 +30,19 @@ function AppContent() {
   return (
     <>
       <ScrollToTop />
-      <ToastContainer
-        position="top-right"
-        autoClose={4000}
-        hideProgressBar={false}
-        newestOnTop={true}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        toastClassName="custom-toast"
-      />
+      {/* <GlobalToast /> */}
+      
       {location.pathname !== '/' && <NavBar />}
+
       <main className="main-content" style={{ overflow: 'auto', height: '100%' }}>
-      <Routes>
+        <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/pacientes" element={<PacientesTable />} />
-          <Route path="/terapeutas" element={<TerapeutasTable />} />
+          <Route path="/terapeutas"element={<TerapeutasTable />} />
           <Route path="/citas" element={<CitasTable />} />
           <Route path="/encargados" element={<EncargadosTable />} />
           <Route path="/diagnosticos" element={<DiagnosticosTable />} />
-         
-
-       
-          <Route path="/usuarios" element={
-            <ProtectedRoute allowedRoles={["1"]}>
-              <UsuariosTable />
-            </ProtectedRoute>
-          } />
-     
-
-      
         </Routes>
       </main>
     </>
