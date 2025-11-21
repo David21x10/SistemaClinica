@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar, Nav, Container, Button, Offcanvas } from "react-bootstrap";
-import { FaCalendarAlt, FaNotesMedical, FaUsers, FaUserFriends, FaClinicMedical, FaMoneyBill, FaSignOutAlt, FaBars } from "react-icons/fa";
+import { FaCalendarAlt, FaNotesMedical, FaUsers, FaUserFriends, FaClinicMedical, FaSignOutAlt, FaBars } from "react-icons/fa";
 import { FaUserGear } from "react-icons/fa6";
 
 function NavBar() {
@@ -51,16 +51,15 @@ function NavBar() {
 
   const menuItems = [
     { path: "/citas", icon: <FaCalendarAlt size={getIconSize(20)} />, text: "Citas" },
-   // { path: "/diagnosticos", icon: <FaNotesMedical size={getIconSize(20)} />, text: "Diagnósticos" },
+    { path: "/diagnosticos", icon: <FaNotesMedical size={getIconSize(20)} />, text: "Diagnósticos" },
     { path: "/pacientes", icon: <FaUsers size={getIconSize(20)} />, text: "Pacientes" },
-  //  { path: "/encargados", icon: <FaUserFriends size={getIconSize(20)} />, text: "Encargados" },
+    { path: "/encargados", icon: <FaUserFriends size={getIconSize(20)} />, text: "Encargados" },
     { path: "/terapeutas", icon: <FaClinicMedical size={getIconSize(20)} />, text: "Terapeutas" },
-   // { path: "/compras", icon: <FaMoneyBill size={getIconSize(20)} />, text: "Compras" },
     { path: "/usuarios", icon: <FaUserGear size={getIconSize(20)} />, text: "Usuarios" }
   ];
   const userRole = localStorage.getItem("idRol")?.toString();
 
-  const unallowedPathsForRole1 = [ "/compras", "/usuarios"];
+  const unallowedPathsForRole1 = [ "/usuarios"];
   //ADMINISRADOR = 1
   const filteredMenuItems =
     userRole === "1"
@@ -69,7 +68,7 @@ function NavBar() {
   return (
     <>
       <Navbar expand="xl" fixed="top" className="shadow-lg" style={{ 
-        background: "linear-gradient(to right, #287549, #1a5735)",
+        background: "linear-gradient(to right, #4a90e2, #1e5799)",
         borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
         padding: isMobileDevice ? "0.5rem 0" : "0.75rem 0"
       }}>
@@ -94,8 +93,8 @@ function NavBar() {
               }}
             >
               <img 
-                src="/logo.png"
-                alt="Logo"
+                src="/images/LogoRenueva.png"
+                alt="Logo Clínica de Rehabilitación"
                 style={{
                   width: isMobileDevice ? "30px" : windowWidth < 576 ? "35px" : "45px",
                   height: isMobileDevice ? "30px" : windowWidth < 576 ? "35px" : "45px",
@@ -109,7 +108,7 @@ function NavBar() {
                 letterSpacing: "0.5px",
                 textShadow: "2px 2px 4px rgba(0,0,0,0.2)"
               }}>
-                {isMobileDevice ? "Citas" : "Sistema de Citas"}
+                {isMobileDevice ? "Renueva" : "Renueva"}
               </span>
             </Navbar.Brand>
           </div>
@@ -218,7 +217,7 @@ function NavBar() {
         placement="end"
         className="bg-dark mobile-menu"
         style={{
-          background: "linear-gradient(135deg, #287549, #1a5735)",
+          background: "linear-gradient(135deg, rgba(74, 144, 226, 0.95) 0%, rgba(30, 87, 153, 0.9) 50%, rgba(74, 144, 226, 0.85) 100%)",
           color: "white",
           width: isMobileDevice ? "85%" : windowWidth < 576 ? "100%" : "280px",
           transition: "transform 0.3s ease-in-out",
