@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from "react";
+import React, { useState, type FormEvent } from "react";
 import { Button, Form, Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaUser, FaLock } from "react-icons/fa";
@@ -80,7 +80,7 @@ const Login: React.FC = () => {
           >
             <div className="text-center mb-4">
               <img
-                src="/logo-new.svg"
+                src="/images/LogoRenueva.png"
                 alt="Logo Clínica de Rehabilitación"
                 style={{
                   width: "120px",
