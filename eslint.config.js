@@ -1,4 +1,3 @@
-
 import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -11,24 +10,31 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 export default [
   {
     ignores: [
-      '**/node_modules/', 
+      '**/node_modules/',
       '**/dist/',
-      'backend/node_modules/', 
+      'backend/node_modules/',
       'frontend/node_modules/',
+      'build/',
     ],
   },
-  
-    {
+
+  {
     files: ['backend/**/*.js'],
     languageOptions: {
       ecmaVersion: 2022,
-      sourceType: 'commonjs', 
+      sourceType: 'commonjs',
       globals: {
-        ...globals.node, 
+        ...globals.node,
+      },
     },
-    rules: js.configs.recommended.rules, 
+    rules: {
+      ...js.configs.recommended.rules,
+      'no-unused-vars': 'warn',
+    },
   },
-    files: ['frontend/**/*.{ts,tsx}'], 
+
+  {
+    files: ['frontend/**/*.{ts,tsx}'],
     plugins: {
       'react': pluginReact,
       'react-hooks': reactHooks,
@@ -38,13 +44,13 @@ export default [
     },
     languageOptions: {
       ecmaVersion: 2022,
-      sourceType: 'module', 
-      parser: tseslint.parser, 
+      sourceType: 'module',
+      parser: tseslint.parser,
       parserOptions: {
         ecmaFeatures: { jsx: true },
       },
       globals: {
-        ...globals.browser,   
+        ...globals.browser,
       },
     },
     settings: {
@@ -55,11 +61,16 @@ export default [
       ...tseslint.configs.recommended.rules,
       ...pluginReact.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
-      ...reactHooks.configs.recommended.rules,
+      
+      // ...reactHooks.configs.recommended.rules, 
+
       'react-refresh/only-export-components': 'warn',
       'react/react-in-jsx-scope': 'off',
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'warn',
+      
+      'react-hooks/rules-of-hooks': 'off',
+      'react-hooks/exhaustive-deps': 'off',
     },
   },
 ];

@@ -47,6 +47,7 @@ function ProductosTable() {
     }, []);
 
     useEffect(() => {
+         
         obtenerProductos();
     }, [obtenerProductos]);
 

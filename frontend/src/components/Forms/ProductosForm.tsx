@@ -26,6 +26,7 @@ function ProductosForm({ show, handleClose, handleSubmit, productoEditar }: Prod
 
     useEffect(() => {
         if (productoEditar) {
+             
             setNombre(productoEditar.nombre);
             setDescripcion(productoEditar.descripcion || '');
             setCategoria(productoEditar.categoria || '');

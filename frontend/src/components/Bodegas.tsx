@@ -53,6 +53,7 @@ function BodegaTable() {
     }, []);
 
     useEffect(() => {
+         
         obtenerBodegas();
     }, [obtenerBodegas]);
 

@@ -1,13 +1,7 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
 
-# Obtiene el mensaje del commit del archivo que Git pasa como argumento
+
 commit_message=$(cat "$1")
 
-# Patrones para validar el mensaje del commit
-# Formato: tipo(scope): descripción
-# Tipos disponibles: feat, fix, docs, style, refactor, perf, test, chore, ci,
-# build, revert, hotfix, wip, release, deps, security, migration
 commit_pattern="^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert|hotfix|wip|release|deps|security|migration)(\(.+\))?: .{1,100}"
 
 if ! echo "$commit_message" | grep -qE "$commit_pattern"; then
