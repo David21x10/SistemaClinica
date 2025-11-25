@@ -12,10 +12,8 @@ const cardsData = [
   { path: "/citas", img: "/images/citas.webp", title: "Control de Citas", text: "Organiza y gestiona citas de los pacientes.", icon: <FaCalendarAlt size={24} /> },
   { path: "/diagnosticos", img: "/images/diagnostico.webp", title: "Control de Diagnósticos", text: "Administra los diagnósticos del sistema.", icon: <FaUserGear size={24} /> },
   { path: "/terapeutas", img: "/images/terapeuta.webp", title: "Control de Terapeutas", text: "Administra terapeutas, horarios y especialidades.", icon: <FaUserMd size={24} /> },
- // { path: "/productos", img: "/images/producto.webp", title: "Control de Productos", text: "Supervisa el stock y gestión de productos.", icon: <FaBox size={24} /> },
- // { path: "/compras", img: "/images/compras.webp", title: "Control de Compras", text: "Administra las compras del sistema.", icon: <FaBuyNLarge size={24} /> },
- // { path: "/bodega", img: "/images/bodega.webp", title: "Control de Bodega", text: "Administra el inventario de productos médicos.", icon: <FaWarehouse size={24} /> },
- // { path: "/prestamos", img: "/images/prestamo.webp", title: "Control de Préstamos", text: "Administra los préstamos del sistema.", icon: <FaShare size={24} /> },
+  { path: "/productos", img: "/images/producto.webp", title: "Control de Productos", text: "Supervisa el stock y gestión de productos.", icon: <FaBox size={24} /> },
+  { path: "/bodega", img: "/images/bodega.webp", title: "Control de Bodega", text: "Administra el inventario de productos médicos.", icon: <FaWarehouse size={24} /> },
   { path: "/usuarios", img: "/images/usuario.webp", title: "Control de Usuarios", text: "Administra los usuarios del sistema.", icon: <FaUserGear size={24} /> },
 ];
 

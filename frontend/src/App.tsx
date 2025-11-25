@@ -14,7 +14,8 @@ import Login from './components/Login';
 import EncargadosTable from "./components/Encargados";
 import DiagnosticosTable from "./components/Diagnosticos";
 import ScrollToTop from './components/ScrollToTop';
-
+import ProductosTable from './components/Productos';
+import BodegasTable from './components/Bodegas';
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function AppContent() {
           <Route path="/citas" element={<CitasTable />} />
           <Route path="/encargados" element={<EncargadosTable />} />
           <Route path="/diagnosticos" element={<DiagnosticosTable />} />
+          <Route path="/productos" element={<ProductosTable />} />
+          <Route path="/bodega" element={<BodegasTable />} />
         </Routes>
       </main>
     </>
