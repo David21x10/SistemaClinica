@@ -16,6 +16,7 @@ import DiagnosticosTable from "./components/Diagnosticos";
 import ScrollToTop from './components/ScrollToTop';
 import ProductosTable from './components/Productos';
 import BodegasTable from './components/Bodegas';
+import UsuariosTable from "./components/Usuario";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function AppContent() {
           <Route path="/diagnosticos" element={<DiagnosticosTable />} />
           <Route path="/productos" element={<ProductosTable />} />
           <Route path="/bodega" element={<BodegasTable />} />
+          <Route path="/usuarios" element={<UsuariosTable />} />
         </Routes>
       </main>
     </>
