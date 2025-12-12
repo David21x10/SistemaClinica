@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-//import RecetaReport from './Reports/RecetaReport';
+import RecetaReport from './Reports/RecetaReport';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 
 export interface Diagnostico {
@@ -284,9 +284,8 @@ function DiagnosticosTable() {
                               padding: "0.4rem 0.6rem"
                             }}
                           >
-                            <FaTrash />
+                          <FaTrash />
                           </Button>
-                          {/*
                           <PDFDownloadLink
                             document={<RecetaReport diagnostico={diagnostico} />}
                             fileName={`Receta_${diagnostico.paciente?.nombre || ''}_${diagnostico.paciente?.apellido || ''}.pdf`}
@@ -300,7 +299,6 @@ function DiagnosticosTable() {
                               loading ? <Spinner animation="border" size="sm" /> : <FaFilePdf />
                             )}
                           </PDFDownloadLink>
-                          */}
                         </div>
                       </td>
                     </tr>

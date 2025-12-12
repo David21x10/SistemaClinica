@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     marginBottom: 20,
     padding: 10,
-    backgroundColor: '#2E8B57',
+    backgroundColor: '#4a90e2',
     borderRadius: 8,
     textAlign: 'center',
     color: 'white',
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   tableHeader: {
-    backgroundColor: '#2E8B57',
+    backgroundColor: '#4a90e2',
     flexDirection: 'row',
     color: 'white',
     fontWeight: 'bold',

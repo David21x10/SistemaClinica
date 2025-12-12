@@ -15,7 +15,7 @@ async function getDiagnostico(req, res) {
             },
             {
                 model: Terapeuta,
-                attributes: ['nombre', 'especialidad']
+                attributes: ['nombre', 'apellido', 'especialidad']
             }
         ]
     })
